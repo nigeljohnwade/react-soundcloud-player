@@ -80,7 +80,10 @@
     margin-bottom: 20px;
     text-align: left;
 }
-
+.waveform{
+    width: 650px;
+    height: 100px;
+}
 .search-field {
     font-size: 40px;
     width: 85%;
