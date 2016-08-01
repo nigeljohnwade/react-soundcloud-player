@@ -44,8 +44,6 @@ class Main extends Component {
 
         SC.get('/tracks', {
             q: this.state.query,
-            'bpm[from]': this.state['bpm[from]'],
-            'bpm[to]': this.state['bpm[to]'],
             embeddable_by: 'all',
             limit: 100
         }, (err, tracks) => {
