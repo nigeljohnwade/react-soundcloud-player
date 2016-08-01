@@ -7,6 +7,15 @@ export default class Track extends Component {
         const currentProgress = currentTime / duration * 100 || 0;
         return (
             <div className="player">
+                <div className="background">
+                    <Progress
+                        className="progress-container"
+                        innerClassName="progress"
+                        soundCloudAudio={soundCloudAudio}
+                        value={currentProgress} />
+    
+                    <img className='waveform' src={track && track.waveform_url} />
+                </div>
                 <PlayButton
                     className="orange-button"
                     soundCloudAudio={soundCloudAudio}
@@ -18,16 +27,19 @@ export default class Track extends Component {
                     soundCloudAudio={soundCloudAudio}
                     currentTime={currentTime} />
                 <div className="track-info">
-                    <h2 className="track-title">{track && track.title}</h2>
+                    <h2 className="track-title">{track && track.title} 
+                    {track && track.bpm ? (
+                                <span> ({track.bpm}bpm)</span>
+                            
+                    ) :
+                        null}
+                    </h2>
                     <h3 className="track-user">{track && track.user && track.user.username}</h3>
                     <img className='artwork' src={track && track.artwork_url} />
-                    <img className='waveform' src={track && track.waveform_url} />
+                    <p>Genre: <span>{track && track.genre}</span></p>
+                    <p>Tags: <span>{track && track.tag_list}</span></p>
                 </div>
-                <Progress
-                    className="progress-container"
-                    innerClassName="progress"
-                    soundCloudAudio={soundCloudAudio}
-                    value={currentProgress} />
+
             </div>
         );
     }

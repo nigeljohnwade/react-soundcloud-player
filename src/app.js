@@ -13,13 +13,23 @@ class Main extends Component {
     constructor(props){
         super();
         this.state = {
-            query: '',
+            query: '', 
+            'bpm[from]': 0,
+            'bpm[to]': 119,
             hasResults: false,
             searchResults: [],
             isLoading: false
         }
     }
     handleTextChange(event){
+        this.setState({
+            query: event.target.value
+        });
+        if(event.key === 'Enter'){
+            this.search.call(this);
+        }
+    }
+    handleRangeChange(event){
         this.setState({
             query: event.target.value
         });
@@ -34,9 +44,13 @@ class Main extends Component {
 
         SC.get('/tracks', {
             q: this.state.query,
-            embeddable_by: 'all'
+            'bpm[from]': this.state['bpm[from]'],
+            'bpm[to]': this.state['bpm[to]'],
+            embeddable_by: 'all',
+            limit: 100
         }, (err, tracks) => {
             if(!err){
+                console.log(tracks);
                 this.setState({
                     hasResults: true,
                     searchResults: tracks,
@@ -53,6 +67,8 @@ class Main extends Component {
                        onKeyUp={this.handleTextChange.bind(this)}
                        className="search-field"
                        placeholder="Enter song name or artist..." />
+                <input type="range" min="0" max="250" id="bpm_center" onKeyUp={this.handleRangeChange.bind(this)}/>
+                <input type="range" min="0" max="250" id="bpm_range" onKeyUp={this.handleRangeChange.bind(this)}/>
                 <button className="search-button"
                         onClick={this.search.bind(this)}>Search</button>
                 <div className="center">

@@ -1,21 +1,19 @@
 .orange-button {
     display: inline-block;
-    color: #FC561E;
     font-size: 1em;
     padding: 16px;
     padding: 1rem;
     margin: 0;
     height: auto;
     vertical-align: middle;
-    border-radius: 3px;
     text-decoration: none;
     border: 0;
     outline: none;
     cursor: pointer;
-    background: #fc561e;
+    background-color: #fc561e;
     border-radius: 50px;
     color: #fff;
-    float: left;
+    position: absolute;
 }
 
 .sb-soundplayer-play-btn:hover {
@@ -38,13 +36,15 @@
 }
 
 .progress-container {
-    background-color: #DDD;
-    width: 100%;
-    height: 8px;
+    background-color: #fff;
     overflow: hidden;
     cursor: pointer;
-    margin-top: 10px;
     float: left;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .progress {
@@ -53,13 +53,15 @@
 }
 
 .track-info {
-    float: left;
-    margin-left: 20px;
+    position: absolute;
+    margin-left: 70px;
 }
 
 .timer {
-    float: right;
+    position: absolute;
     color: #6F6F6F;
+    top: 12px;
+    right: 12px;
 }
 
 .track-title {
@@ -79,10 +81,15 @@
     padding: 10px;
     margin-bottom: 20px;
     text-align: left;
+    position: relative;
+    height: 220px;
 }
 .waveform{
-    width: 650px;
-    height: 100px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
 }
 .search-field {
     font-size: 40px;
