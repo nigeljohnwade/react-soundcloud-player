@@ -67,8 +67,6 @@ class Main extends Component {
                        onKeyUp={this.handleTextChange.bind(this)}
                        className="search-field"
                        placeholder="Enter song name or artist..." />
-                <input type="range" min="0" max="250" id="bpm_center" onKeyUp={this.handleRangeChange.bind(this)}/>
-                <input type="range" min="0" max="250" id="bpm_range" onKeyUp={this.handleRangeChange.bind(this)}/>
                 <button className="search-button"
                         onClick={this.search.bind(this)}>Search</button>
                 <div className="center">
