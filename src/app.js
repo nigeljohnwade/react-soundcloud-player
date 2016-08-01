@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom';
 import ProgressSoundPlayer from './components/ProgressSoundPlayer';
 import SC from 'node-soundcloud';
 import Loading from 'react-loading';
-
-
+import {client_id} from './config';
 
 SC.init({
     id: client_id
