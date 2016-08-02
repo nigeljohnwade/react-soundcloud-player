@@ -1,6 +1,9 @@
 *{
     box-sizing: border-box;
 }
+body{
+    font-family: 'Gill Sans W01 Medium';
+}
 .orange-button {
     display: inline-block;
     font-size: 1em;
