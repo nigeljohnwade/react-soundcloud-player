@@ -1,3 +1,6 @@
+*{
+    box-sizing: border-box;
+}
 .orange-button {
     display: inline-block;
     font-size: 1em;
@@ -36,7 +39,7 @@
 }
 
 .progress-container {
-    background-color: #fff;
+    background-color: transparent;
     overflow: hidden;
     cursor: pointer;
     float: left;
@@ -48,7 +51,7 @@
 }
 
 .progress {
-    background-color: #fc561e;
+    background-image: linear-gradient(0deg, rgba(255, 255, 0, 0.5), rgba(255, 255, 0, 0.5) 20% ,rgba(255, 0, 0, 0.5) 50%, rgba(255, 255, 0, 0.5) 80%, rgba(255, 255, 0, 0.5));
     height: 100%;
 }
 
@@ -82,7 +85,11 @@
     margin-bottom: 20px;
     text-align: left;
     position: relative;
-    height: 220px;
+    height: 120px;
+    transition: height 0.3s ease;
+}
+.player-playing{
+    height: 240px;
 }
 .waveform{
     position: absolute;
@@ -120,4 +127,21 @@
 
 #search-results {
     margin-top: 50px;
+}
+.background {
+    position: absolute;
+    background-image: linear-gradient(0deg, rgba(255, 255, 0, 0.2), rgba(255, 255, 0, 0.2) 20%, rgba(255, 0, 0, 0.2) 50%, rgba(255, 255, 0, 0.2) 80%, rgba(255, 255, 0, 0.2));
+    background-position: center center;
+    height: 240px;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+.background-playing{
+    -webkit-animation: gradientPulse 2s infinite;
+}
+@-webkit-keyframes gradientPulse{
+    0%{background-size: 100% 100%}
+    50%{background-size: 100% 120%}
+    100%{background-size: 100% 100%}
 }

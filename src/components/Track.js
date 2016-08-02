@@ -6,8 +6,8 @@ export default class Track extends Component {
         const { track, soundCloudAudio, playing, seeking, currentTime, duration } = this.props;
         const currentProgress = currentTime / duration * 100 || 0;
         return (
-            <div className="player">
-                <div className="background">
+            <div className={playing ? "player player-playing" : "player"}>
+                <div className={playing ? "background background-playing" : "background"}>
                     <Progress
                         className="progress-container"
                         innerClassName="progress"

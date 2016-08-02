@@ -60,7 +60,7 @@ class Main extends Component {
     render(){
         return (
             <div>
-                <h1>Electron SoundCloud Player</h1>
+                <h1>SoundCloud Player</h1>
                 <input type="search"
                        onKeyUp={this.handleTextChange.bind(this)}
                        className="search-field"
